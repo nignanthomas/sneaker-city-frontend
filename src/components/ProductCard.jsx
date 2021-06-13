@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
   const productSlug = slugify(productTitle, { lower: true })
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-2">
+    <div className="max-w-sm rounded overflow-hidden shadow-md mx-2 mb-4">
       <Link to={`/products/${product.id}/${productSlug}`}>
         <div className="h-64">
           <img className="object-cover w-full h-full" src={product.picture} alt={product.model} />
