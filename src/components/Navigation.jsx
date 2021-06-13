@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { ShoppingBagIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { classNames, isAuthenticated } from '../helpers/shared';
+import { cartLength } from '../helpers/cart';
 
 const Navigation = () => {
   const navigation = [
@@ -59,6 +60,7 @@ const Navigation = () => {
                   <button type="button" className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">Cart</span>
                     <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
+                    <span className="bg-red-500 text-white px-1 rounded text-xs absolute top-4 right-0">{cartLength()}</span>
                   </button>
                 </Link>
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { productById } from '../helpers/products.api';
 import { classNames } from '../helpers/shared';
+import { addToCart } from '../helpers/cart';
 import SelectSize from './SelectSize';
 
 const ProductComponent = (props) => {
@@ -16,6 +17,10 @@ const ProductComponent = (props) => {
 
   const selectSize = (size) => {
     setSelectedSize(size);
+  };
+
+  const redirectToCart = () => {
+    props.history.push('/cart');
   };
 
   useEffect(() => {
@@ -62,6 +67,7 @@ const ProductComponent = (props) => {
             'w-full items-center justify-center px-10 py-3 mt-5 border border-transparent text-base font-medium rounded-md text-white',
           )}
           disabled={!selectedSize}
+          onClick={() => addToCart({product, size: selectedSize}, () => redirectToCart())}
         >
           Add to Cart
         </button>
