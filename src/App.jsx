@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NotFound from './components/NotFound';
 import Home from './views/Home';
 import Shop from './views/Shop';
 
@@ -9,6 +10,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/shop" exact component={Shop} />
+        <Route path="*" exact component={NotFound} />
       </Switch>
     </Router>
   );
