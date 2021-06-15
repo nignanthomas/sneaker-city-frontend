@@ -1,4 +1,4 @@
-const emitStorageEvent = () => window.dispatchEvent(new Event('storage'));
+import { emitStorageEvent } from "./shared";
 
 export const addToCart = ({ product, size }) => {
   let cart = [];

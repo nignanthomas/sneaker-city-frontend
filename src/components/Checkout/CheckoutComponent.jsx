@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getCart, getCartTotal } from '../helpers/cart';
-import CartItem from './CartItem';
+import { getCart, getCartTotal } from '../../helpers/cart';
+import CartItem from '../Cart/CartItem';
 import DeliveryMethod from './DeliveryMethod';
 import PaymentMethod from './PaymentMethod';
 import PersonalDetails from './PersonalDetails';

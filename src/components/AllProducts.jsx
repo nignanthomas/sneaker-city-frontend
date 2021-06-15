@@ -9,7 +9,7 @@ const AllProducts = () => {
   const getAllProducts = async () => {
     await allProducts()
       .then(data => setProducts(data.data))
-      .catch(error => setError(error))
+      .catch(err => setError(err))
   };
 
   useEffect(() => {

@@ -2,8 +2,8 @@ import React, { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Elements, CardElement } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { classNames } from '../helpers/shared';
-import { cartLength, clearCart } from '../helpers/cart';
+import { classNames } from '../../helpers/shared';
+import { cartLength, clearCart } from '../../helpers/cart';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 const CARD_OPTIONS = {
@@ -26,8 +26,8 @@ const CARD_OPTIONS = {
       }
     },
     invalid: {
-      iconColor: '#ffc7ee',
-      color: '#ffc7ee'
+      iconColor: '#ed61a3',
+      color: '#ed61a3'
     }
   }
 };
@@ -48,7 +48,7 @@ const PaymentMethod = () => {
   return (
     <div className="mt-10 sm:mt-0 mb-5">
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form>
           <div className="shadow overflow-hidden sm:rounded-md">
             <div className="text-lg font-bold px-4 py-3 bg-gray-200 sm:px-6">
               2. Shipping Method

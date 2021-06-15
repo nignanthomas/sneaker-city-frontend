@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getCart, getCartTotal } from '../helpers/cart';
-import { classNames, isAuthenticated } from '../helpers/shared';
+import { getCart, getCartTotal } from '../../helpers/cart';
+import { classNames } from '../../helpers/shared';
+import { isAuthenticated } from '../../helpers/user';
 import CartItem from './CartItem';
 
 const CartComponent = (props) => {

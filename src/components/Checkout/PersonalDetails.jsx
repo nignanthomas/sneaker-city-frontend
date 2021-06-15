@@ -12,7 +12,7 @@ const PersonalDetails = ({ personalDetails, setPersonalDetails }) => {
   return (
     <div className="mt-10 sm:mt-0 mb-5">
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form>
           <div className="shadow overflow-hidden sm:rounded-md">
             <div className="text-lg font-bold px-4 py-3 bg-gray-200 sm:px-6">
               1. Personal Details

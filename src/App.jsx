@@ -6,12 +6,15 @@ import Shop from './views/Shop';
 import Product from './views/Product';
 import Cart from './views/Cart';
 import Checkout from './views/Checkout';
+import Authentication from './views/Authentication';
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/login" exact component={Authentication} />
+        <Route path="/signup" exact component={Authentication} />
         <Route path="/shop" exact component={Shop} />
         <Route path="/products/:productId/:productSlug" exact component={Product} />
         <Route path="/cart" exact component={Cart} />

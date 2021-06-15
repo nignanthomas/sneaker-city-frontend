@@ -1,6 +1,6 @@
 import React from 'react';
 import { MinusSmIcon, PlusSmIcon, TrashIcon } from '@heroicons/react/outline';
-import { removeFromCart, updateCart } from '../helpers/cart';
+import { removeFromCart, updateCart } from '../../helpers/cart';
 
 const CartItem = ({ item, checkout }) => {
   return (

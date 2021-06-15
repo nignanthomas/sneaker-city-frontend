@@ -3,8 +3,9 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { ShoppingBagIcon, MenuIcon, XIcon, UserCircleIcon } from '@heroicons/react/outline';
-import { classNames, isAuthenticated } from '../helpers/shared';
+import { classNames } from '../helpers/shared';
 import { cartLength } from '../helpers/cart';
+import { isAuthenticated, logoutUser } from '../helpers/user';
 
 const Navigation = () => {
   const navigation = [
@@ -12,6 +13,8 @@ const Navigation = () => {
     { name: 'Men', href: '/men', current: window.location.pathname === '/men' },
     { name: 'Women', href: '/women', current: window.location.pathname === '/women' },
   ];
+
+  (!isAuthenticated()) && navigation.push({ name: 'Login', href: '/login', current: window.location.pathname === '/login' });
 
   const [cartSize, setCartSize] = useState(null)
 
@@ -66,10 +69,10 @@ const Navigation = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <Link to="/cart">
-                  <button type="button" className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                  <button type="button" className="relative bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">Cart</span>
                     <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
-                    <span className="bg-red-500 text-white px-1 rounded text-xs absolute top-4 right-0">{cartSize}</span>
+                    <span className="bg-red-500 text-white px-1 rounded text-xs absolute top-0 right-0">{cartSize}</span>
                   </button>
                 </Link>
 
@@ -78,14 +81,9 @@ const Navigation = () => {
                   {({ open }) => (
                     <>
                       <div>
-                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                           <span className="sr-only">Open user menu</span>
-                          <UserCircleIcon className="h-6 w-6" />
-                          {/* <img
-                            className="h-8 w-8 rounded-full"
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                          /> */}
+                          <UserCircleIcon className="h-7 w-7" />
                         </Menu.Button>
                       </div>
                       <Transition
@@ -118,7 +116,7 @@ const Navigation = () => {
                           <Menu.Item>
                             {({ active }) => (
                               <Link
-                                to="#"
+                                onClick={() => logoutUser()}
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
                                   'block px-4 py-2 text-sm text-gray-700',
