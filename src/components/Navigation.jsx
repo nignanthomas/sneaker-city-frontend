@@ -1,8 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { ShoppingBagIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { ShoppingBagIcon, MenuIcon, XIcon, UserCircleIcon } from '@heroicons/react/outline';
 import { classNames, isAuthenticated } from '../helpers/shared';
 import { cartLength } from '../helpers/cart';
 
@@ -12,6 +12,15 @@ const Navigation = () => {
     { name: 'Men', href: '/men', current: window.location.pathname === '/men' },
     { name: 'Women', href: '/women', current: window.location.pathname === '/women' },
   ];
+
+  const [cartSize, setCartSize] = useState(null)
+
+  useEffect(() => {
+    setCartSize(!!(cartLength()) && cartLength());
+    window.addEventListener('storage', () => {
+      setCartSize(!!(cartLength()) && cartLength());
+    });
+  }, [])
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -31,10 +40,10 @@ const Navigation = () => {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex-shrink-0 flex items-center uppercase font-extrabold">
                   <Link to="/">
                     <p className="block lg:hidden h-8 w-auto text-2xl text-white">SC</p>
-                    <p className="hidden lg:block h-8 w-auto text-2xl text-white">Sneaker City</p>
+                    <p className="hidden lg:block h-8 w-auto text-xl text-white">Sneaker City</p>
                   </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -60,7 +69,7 @@ const Navigation = () => {
                   <button type="button" className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span className="sr-only">Cart</span>
                     <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
-                    <span className="bg-red-500 text-white px-1 rounded text-xs absolute top-4 right-0">{cartLength()}</span>
+                    <span className="bg-red-500 text-white px-1 rounded text-xs absolute top-4 right-0">{cartSize}</span>
                   </button>
                 </Link>
 
@@ -71,11 +80,12 @@ const Navigation = () => {
                       <div>
                         <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                           <span className="sr-only">Open user menu</span>
-                          <img
+                          <UserCircleIcon className="h-6 w-6" />
+                          {/* <img
                             className="h-8 w-8 rounded-full"
                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt=""
-                          />
+                          /> */}
                         </Menu.Button>
                       </div>
                       <Transition

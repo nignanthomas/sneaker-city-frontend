@@ -23,7 +23,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-image hidden lg:block col-span-6 h-96">
+          <div className="hero-image hidden md:block col-span-6 h-96">
             <img
               className="object-cover w-full h-full max-w-2xl rounded-md shadow-2xl"
               src="https://images.pexels.com/photos/48262/pexels-photo-48262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"

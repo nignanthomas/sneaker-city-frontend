@@ -19,10 +19,6 @@ const ProductComponent = (props) => {
     setSelectedSize(size);
   };
 
-  const redirectToCart = () => {
-    props.history.push('/cart');
-  };
-
   useEffect(() => {
     const { productId } = props.match.params;
     getProduct(productId);
@@ -67,7 +63,7 @@ const ProductComponent = (props) => {
             'w-full items-center justify-center px-10 py-3 mt-5 border border-transparent text-base font-medium rounded-md text-white',
           )}
           disabled={!selectedSize}
-          onClick={() => addToCart({product, size: selectedSize}, () => redirectToCart())}
+          onClick={() => addToCart({product, size: selectedSize})}
         >
           Add to Cart
         </button>
