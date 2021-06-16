@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { classNames } from '../helpers/shared';
-import { allSizes } from '../helpers/sizes.api';
+import { classNames } from '../../helpers/shared';
+import { allSizes } from '../../helpers/sizes.api';
 
 const SelectSize = ({ productSizes, selectSize, selectedSize }) => {
   const [sizes, setSizes] = useState([]);

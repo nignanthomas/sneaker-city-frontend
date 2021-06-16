@@ -1,6 +1,6 @@
 import React from 'react';
 import CartComponent from '../components/Cart/CartComponent';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 
 const Cart = (props) => {
   document.title = 'Sneaker City - Cart';

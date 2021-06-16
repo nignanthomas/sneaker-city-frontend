@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckoutComponent from '../components/Checkout/CheckoutComponent';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 
 const Checkout = () => {
   document.title = 'Sneaker City - Checkout';

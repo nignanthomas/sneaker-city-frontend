@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { allProducts } from '../helpers/products.api';
+import { allProducts } from '../../helpers/products.api';
 import ProductCard from './ProductCard';
 
 const AllProducts = () => {

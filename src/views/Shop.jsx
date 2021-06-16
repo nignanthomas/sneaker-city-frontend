@@ -1,6 +1,6 @@
 import React from 'react';
-import AllProducts from '../components/AllProducts';
-import Layout from '../components/Layout';
+import AllProducts from '../components/Products/AllProducts';
+import Layout from '../components/Layout/Layout';
 
 const Shop = () => {
   document.title = 'Sneaker City - Shop';

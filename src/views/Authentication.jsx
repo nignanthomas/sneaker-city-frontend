@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import AuthContainer from '../components/Auth/AuthContainer';
 import Login from '../components/Auth/Login';
 import Signup from '../components/Auth/Signup';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 
 const Authentication = (props) => {
   document.title = 'Sneaker City - Authentication';

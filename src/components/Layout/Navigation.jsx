@@ -3,9 +3,9 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { ShoppingBagIcon, MenuIcon, XIcon, UserCircleIcon } from '@heroicons/react/outline';
-import { classNames } from '../helpers/shared';
-import { cartLength } from '../helpers/cart';
-import { isAuthenticated, logoutUser } from '../helpers/user';
+import { classNames } from '../../helpers/shared';
+import { cartLength } from '../../helpers/cart';
+import { isAuthenticated, logoutUser } from '../../helpers/user';
 
 const Navigation = () => {
   const navigation = [

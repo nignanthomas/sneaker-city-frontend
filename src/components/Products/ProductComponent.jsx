@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { productById } from '../helpers/products.api';
-import { classNames } from '../helpers/shared';
-import { addToCart } from '../helpers/cart';
+import { productById } from '../../helpers/products.api';
+import { classNames } from '../../helpers/shared';
+import { addToCart } from '../../helpers/cart';
 import SelectSize from './SelectSize';
 
 const ProductComponent = (props) => {

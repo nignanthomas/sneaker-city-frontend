@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { latestProducts } from '../helpers/products.api';
+import { latestProducts } from '../../helpers/products.api';
 import ProductCard from './ProductCard';
 
 const Trending = () => {
