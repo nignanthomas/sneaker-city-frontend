@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { allProducts } from '../../helpers/products.api';
+import { allProducts, productsByCategory } from '../../helpers/products.api';
 import ProductCard from './ProductCard';
 
-const AllProducts = () => {
+const AllProducts = ({ categoryId }) => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -12,8 +12,18 @@ const AllProducts = () => {
       .catch(err => setError(err))
   };
 
+  const getProductsByCategory = async (categoryId) => {
+    await productsByCategory(categoryId)
+      .then(data => setProducts(data.data))
+      .catch(err => setError(err))
+  };
+
   useEffect(() => {
-    getAllProducts();
+    if (categoryId) {
+      getProductsByCategory(categoryId);
+    } else {
+      getAllProducts();
+    }
   }, []);
 
   return (
