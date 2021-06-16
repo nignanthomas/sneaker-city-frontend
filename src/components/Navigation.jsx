@@ -46,7 +46,7 @@ const Navigation = () => {
                 <div className="flex-shrink-0 flex items-center uppercase font-extrabold">
                   <Link to="/">
                     <p className="block lg:hidden h-8 w-auto text-2xl text-white">SC</p>
-                    <p className="hidden lg:block h-8 w-auto text-xl text-white">Sneaker City</p>
+                    <p className="hidden lg:block h-8 w-auto text-xl text-white">Snkr City</p>
                   </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
