@@ -1,4 +1,5 @@
 # Sneaker City
+
 Live site: https://sneaker-city-frontend.netlify.app/
 
 ## Vision :telescope:
@@ -16,6 +17,13 @@ Sneaker City is a brand new online-only store for sneaker enthusiasts. This isnâ
 3. Run the command `yarn start` to spin up the web application.
 
 4. The app should be availabel on `http://localhost:3000`.
+
+# Technologies Used :gear:
+
+```
+React
+Tailwind
+```
 
 # Bugs :bug:
 

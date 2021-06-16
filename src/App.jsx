@@ -7,6 +7,8 @@ import Product from './views/Product';
 import Cart from './views/Cart';
 import Checkout from './views/Checkout';
 import Authentication from './views/Authentication';
+import Men from './views/Men';
+import Women from './views/Women';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/login" exact component={Authentication} />
         <Route path="/signup" exact component={Authentication} />
         <Route path="/shop" exact component={Shop} />
+        <Route path="/men" exact component={Men} />
+        <Route path="/women" exact component={Women} />
         <Route path="/products/:productId/:productSlug" exact component={Product} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/checkout" exact component={Checkout} />

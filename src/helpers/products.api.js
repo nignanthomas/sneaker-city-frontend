@@ -17,3 +17,9 @@ export const productById = async (productId) => {
     .then(response => response.data)
     .catch(error => { throw Error(error) });
 };
+
+export const productsByCategory = async (categoryId) => {
+  return await apiCall.get(`/api/products/category/${categoryId}`)
+    .then(response => response.data)
+    .catch(error => { throw Error(error) });
+};
