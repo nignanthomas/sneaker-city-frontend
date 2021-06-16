@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Drift from "react-driftjs";
+import { isAuthenticated } from '../helpers/user';
 import Footer from './Footer';
 import Navigation from './Navigation';
 
 const Layout = ({ title, description, children }) => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    setUser(isAuthenticated());
+  }, [])
+
   return (
     <>
       <Navigation />
@@ -17,6 +25,12 @@ const Layout = ({ title, description, children }) => {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 mb-5">
         {children}
       </div>
+
+      <Drift
+        appId="xxg57tt28myv"
+        userId={user && user.user.id}
+        attributes={{ email: user && user.user.email }}
+      />
 
       <Footer />
     </>
