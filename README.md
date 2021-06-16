@@ -14,7 +14,7 @@ Sneaker City is a brand new online-only store for sneaker enthusiasts. This isnâ
 
 2. Refer to `.env.example` to configure your environment as follows.
 
-3. Run the command `yarn start` to spin up the web application.
+3. Run the command `yarn install && yarn start` to spin up the web application.
 
 4. The app should be availabel on `http://localhost:3000`.
 
